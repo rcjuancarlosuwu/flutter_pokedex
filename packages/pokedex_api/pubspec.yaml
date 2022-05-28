@@ -1,5 +1,5 @@
 name: pokedex_api
-description: A Very Good Project created by Very Good CLI.
+description: Package to interact with the PokeAPI.
 version: 1.0.0+1
 publish_to: none
 
@@ -7,10 +7,18 @@ environment:
   sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
+  dio: ^4.0.6
   flutter:
     sdk: flutter
+  freezed_annotation: ^2.0.3
+  hive: ^2.2.1
+  hive_flutter: ^1.1.0
+  json_annotation: ^4.5.0
 
 dev_dependencies:
+  build_runner: ^2.1.11
   flutter_test:
     sdk: flutter
+  freezed: ^2.0.3+1
+  json_serializable: ^6.2.0
   very_good_analysis: ^3.0.0
