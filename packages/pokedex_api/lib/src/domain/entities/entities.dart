@@ -1,0 +1,12 @@
+export 'named_api_resource.dart';
+export 'pokemon.dart';
+export 'pokemon_ability.dart';
+export 'pokemon_flavor_text.dart';
+export 'pokemon_species.dart';
+export 'pokemon_sprites.dart';
+export 'pokemon_sprites_dream_world.dart';
+export 'pokemon_sprites_home.dart';
+export 'pokemon_sprites_official_artwork.dart';
+export 'pokemon_sprites_other.dart';
+export 'pokemon_stat.dart';
+export 'pokemon_type.dart';
