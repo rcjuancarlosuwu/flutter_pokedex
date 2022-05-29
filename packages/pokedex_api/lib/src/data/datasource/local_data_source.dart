@@ -9,7 +9,7 @@ class LocalDataSource {
   static const _preferencesBoxName = 'preferencesBox';
 
   /// init [LocalDataSource]
-  Future<void> init() async {
+  static Future<void> init() async {
     await Hive.initFlutter();
     _pokemonBox = await Hive.openBox<Map<String, dynamic>>(_pokemonBoxName);
     _preferencesBox = await Hive.openBox<int>(_preferencesBoxName);
