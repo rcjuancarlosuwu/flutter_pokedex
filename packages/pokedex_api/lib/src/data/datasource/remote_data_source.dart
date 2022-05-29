@@ -2,6 +2,7 @@ import 'dart:math' as math show Random;
 
 import 'package:dio/dio.dart';
 import 'package:pokedex_api/src/src.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 /// [PokeAPIServerException] for PokeAPI exception
 class PokeAPIServerException implements Exception {}
@@ -15,10 +16,9 @@ class RemoteDataSource {
             Dio(
               BaseOptions(
                 baseUrl: _baseUrl,
-                connectTimeout: 5000,
-                receiveTimeout: 3000,
               ),
-            );
+            )
+          ..interceptors.add(PrettyDioLogger());
 
   static const _baseUrl = 'https://pokeapi.co/api/v2/';
 
@@ -35,7 +35,7 @@ class RemoteDataSource {
         throw PokeAPIServerException();
       }
     } catch (_) {
-      rethrow;
+      throw PokeAPIServerException();
     }
   }
 
@@ -51,7 +51,7 @@ class RemoteDataSource {
         throw PokeAPIServerException();
       }
     } catch (_) {
-      rethrow;
+      throw PokeAPIServerException();
     }
   }
 
@@ -65,12 +65,12 @@ class RemoteDataSource {
         throw PokeAPIServerException();
       }
     } catch (_) {
-      rethrow;
+      throw PokeAPIServerException();
     }
   }
 
   /// Get list of [Pokemon]
-  Future<List<Pokemon>> getPokemons({
+  Future<List<NamedAPIResource>> getPokemons({
     int limit = 20,
     int offset = 0,
   }) async {
@@ -84,13 +84,14 @@ class RemoteDataSource {
         queryParameters: queryParameters,
       );
       if (response.statusCode == 200 && response.data != null) {
-        final results = response.data!['results'] as List<Map<String, dynamic>>;
-        return results.map(Pokemon.fromJson).toList();
+        final results = (response.data!['results'] as List)
+            .map((e) => e as Map<String, dynamic>);
+        return results.map(NamedAPIResource.fromJson).toList();
       } else {
         throw PokeAPIServerException();
       }
     } catch (_) {
-      rethrow;
+      throw PokeAPIServerException();
     }
   }
 
@@ -108,7 +109,7 @@ class RemoteDataSource {
         throw PokeAPIServerException();
       }
     } catch (_) {
-      rethrow;
+      throw PokeAPIServerException();
     }
   }
 
