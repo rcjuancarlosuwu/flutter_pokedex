@@ -1,11 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:pokedex/core/app/pokedex_app.dart';
+import 'package:mocktail/mocktail.dart';
+import 'package:pokedex_api/pokedex_api.dart';
+
+class PokemonsRepositoryMock extends Mock implements PokemonRepository {}
+
+// Todo: Add your tests here.
 
 void main() {
   group('App', () {
-    testWidgets('renders *', (tester) async {
-      await tester.pumpWidget(const PokedexApp());
-      // expect(find.byType(CounterPage), findsOneWidget);
-    });
+    testWidgets('renders PokemonsPage', (tester) async {});
   });
 }
