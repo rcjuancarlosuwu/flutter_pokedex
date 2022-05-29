@@ -1,7 +1,7 @@
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
-    }
+    "pokedex": "Pokédex",
+    "searchInput": "Search for a Pokémon by name or using the National Pokédex number",
+    "pokemonLimit": "By swiping, how many pokemons do you want to catch?",
+    "use3Dimages": "Use 3D Pokemon images"
 }

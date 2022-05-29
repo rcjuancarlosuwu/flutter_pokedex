@@ -1,7 +1,7 @@
 {
     "@@locale": "es",
-    "counterAppBarTitle": "Contador",
-    "@counterAppBarTitle": {
-        "description": "Texto mostrado en la AppBar de la página del contador"
-    }
+    "pokedex": "Pokédex",
+    "searchInput": "Busca un Pokémon por su nombre o usando el número de la Pokédex",
+    "pokemonLimit": "Al deslizar, ¿cuántos pokemon quieres atrapar?",
+    "use3Dimages": "¿Quieres usar imágenes 3D?"
 }
