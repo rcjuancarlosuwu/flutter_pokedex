@@ -39,7 +39,7 @@ class PokemonRepository implements IPokemonRepository {
   }
 
   @override
-  Future<List<Pokemon>> getPokemons({
+  Future<List<NamedAPIResource>> getPokemons({
     int offset = 0,
   }) {
     try {
@@ -88,4 +88,10 @@ class PokemonRepository implements IPokemonRepository {
       throw PokeAPIServerFailure();
     }
   }
+
+  @override
+  int getCatchLimit() => _localDataSource.getPokemonLimit();
+
+  @override
+  void setCatchLimit(int limit) => _localDataSource.savePokemonLimit(limit);
 }

@@ -14,7 +14,7 @@ abstract class IPokemonRepository {
   Future<PokemonSpecies> getPokemonSpecie(String id);
 
   /// Get list of [Pokemon]
-  Future<List<Pokemon>> getPokemons({
+  Future<List<NamedAPIResource>> getPokemons({
     int offset = 0,
   });
 
@@ -27,4 +27,10 @@ abstract class IPokemonRepository {
   /// Add a [Pokemon] to favorites
   /// If [Pokemon] is already in favorites, it will be removed
   FutureOr<void> addToFavorites(Pokemon pokemon);
+
+  /// Get catch limit query
+  int getCatchLimit();
+
+  /// Set catch limit query
+  void setCatchLimit(int limit);
 }
