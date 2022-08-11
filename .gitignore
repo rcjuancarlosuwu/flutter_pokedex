@@ -126,6 +126,9 @@ app.*.map.json
 !.idea/dictionaries/
 !.idea/runConfigurations/
 
-# Generated code
+# Generated code files
+app.*.map.json
 *.g.dart
 *.freezed.dart
+*.log
+*.lock
